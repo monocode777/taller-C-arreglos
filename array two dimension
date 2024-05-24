@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<time.h>
+#include<stdlib.h>
+
+int main(){
+
+   int arreglobi[9][9], x=0,y=0;
+   int numero, alerta=0;
+   srand(time(NULL));
+   for(x=0;x<9;x++) //filas
+        for(y=0;y<9;y++)//columnas
+            arreglobi[x][y] = 1+rand()%81;
+            
+    for(x=0;x<9;x++){
+        
+        for(y=0;y<9;y++)
+            printf("%d",arreglobi[x][y]);
+        printf("\n");
+    }
+    printf("Ingrese un número para buscar en el arreglo: ");
+    scanf("%d", &numero);
+    for (x = 0; x < 9; x++) {
+        for (y= 0; y<9 ;y++) {
+            if (arreglobi[x][y] == numero) {
+                printf("El número %d se encuentra en el arreglo.\n", numero);
+                alerta=0;
+                break;
+            } 
+        
+           }
+        }
+    if (!alerta){
+            printf("El número %d no se encuentra en el arreglo.\n", numero);
+        }
+        
+    
+   return 0;
+}
