@@ -1,0 +1,25 @@
+#include <stdio.h>	
+int main () {
+int buscar, alerta=0, listanum [1000];
+
+for(int x = 0; x<1000; x++)
+listanum[x]= x+1;
+    printf("BIENVENIDO AL BUSCADOR DE NUMEROS!!\n");
+    printf("-----------------------------------\n");
+    printf("Ingrese el numero que deseas buscar = ");
+    scanf("%d",  &buscar);
+    printf("-----------------------------------\n");    
+     for (int x = 0; x < 1000; x++) {
+        if (listanum[x] == buscar) {
+            printf("el numero %d se encuentra en la lista ",buscar);
+            alerta = 1;
+            break;
+        }
+    }
+
+    if (!alerta) {
+        printf("UPS!! el numero que buscas no esta en la lista");
+    }
+
+    return 0;
+}
